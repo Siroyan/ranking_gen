@@ -35,14 +35,14 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content=="$twi-rank":
+    if message.content=="$yah-rank":
 
         # background color : cream
         twitter_ranking_image = Image.new("RGB", (1200, 800), (255, 255, 254))
         draw = ImageDraw.Draw(twitter_ranking_image)
         # title
         font = ImageFont.truetype("./assets/fonts/MPLUSRounded1c-ExtraBold.ttf", size=80)
-        draw.text((60, 50), 'Twitter トレンドランキング', fill=(61, 169, 252), font=font)
+        draw.text((130, 50), 'Yahoo! News ランキング', fill=(255, 0, 39), font=font)
         
         # 日本のトレンドを取得
         woeid = 23424856
@@ -74,7 +74,7 @@ async def on_message(message):
         no3_image = tmp_no3_image.resize((tmp_no3_image.width // 3, tmp_no3_image.height // 3), resample=Image.LANCZOS)
         twitter_ranking_image.paste(no3_image, (180, 580))
 
-        image_filepath = './assets/images/twitter_trend_ranking.jpg'
+        image_filepath = './assets/images/yahoo_news_ranking.jpg'
         twitter_ranking_image.save(image_filepath, quality=100)
         await message.channel.send(file=discord.File(image_filepath))
 
