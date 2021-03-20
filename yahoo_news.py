@@ -45,21 +45,21 @@ async def on_message(message):
         # トレンドの文字を貼り付け
         # No1
         font = ImageFont.truetype("./assets/fonts/MPLUSRounded1c-Regular.ttf", size=35)
-        wrap_list = textwrap.wrap(elems[0].get_text()[1:], 22)  # テキストを20文字で改行しリストwrap_listに代入
+        wrap_list = textwrap.wrap(elems[0].get_text(), 22)  # テキストを20文字で改行しリストwrap_listに代入
         line_counter = 0  # 行数のカウンター
         for line in wrap_list:  # wrap_listから1行づつ取り出しlineに代入
             y = line_counter * 40 + 250  # y座標をline_counterに応じて下げる
             draw.multiline_text((300, y),line, fill=(9, 64, 103), font=font)  # 1行分の文字列を画像に描画
             line_counter = line_counter + 1  # 行数のカウンターに1
         # No2
-        wrap_list = textwrap.wrap(elems[1].get_text()[1:], 22)  # テキストを20文字で改行しリストwrap_listに代入
+        wrap_list = textwrap.wrap(elems[1].get_text(), 22)  # テキストを20文字で改行しリストwrap_listに代入
         line_counter = 0  # 行数のカウンター
         for line in wrap_list:  # wrap_listから1行づつ取り出しlineに代入
             y = line_counter * 40 + 420  # y座標をline_counterに応じて下げる
             draw.multiline_text((300, y),line, fill=(9, 64, 103), font=font)  # 1行分の文字列を画像に描画
             line_counter = line_counter + 1  # 行数のカウンターに1
         # No3
-        wrap_list = textwrap.wrap(elems[2].get_text()[1:], 22)  # テキストを20文字で改行しリストwrap_listに代入
+        wrap_list = textwrap.wrap(elems[2].get_text(), 22)  # テキストを20文字で改行しリストwrap_listに代入
         line_counter = 0  # 行数のカウンター
         for line in wrap_list:  # wrap_listから1行づつ取り出しlineに代入
             y = line_counter * 40 + 590  # y座標をline_counterに応じて下げる
