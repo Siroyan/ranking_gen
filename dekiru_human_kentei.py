@@ -29,3 +29,5 @@ no3_image = tmp_no3_image.resize((tmp_no3_image.width // 3, tmp_no3_image.height
 twitter_ranking_image.paste(no3_image, (180, 580))
 
 twitter_ranking_image.save('./assets/images/hoge.png', quality=100)
+
+# 画像
