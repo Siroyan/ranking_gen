@@ -29,7 +29,6 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if message.content=="$yah-rank":
-
         # background color : cream
         twitter_ranking_image = Image.new("RGB", (1200, 800), (255, 255, 254))
         draw = ImageDraw.Draw(twitter_ranking_image)
@@ -41,7 +40,7 @@ async def on_message(message):
         url = 'https://news.yahoo.co.jp/ranking/access/news'
         res = requests.get(url)
         soup = BeautifulSoup(res.text, "html.parser")
-        elems = soup.find_all(href=re.compile("headlines.yahoo.co.jp"))
+        elems = soup.find_all('div', class_="newsFeed_item_title")
         
         # トレンドの文字を貼り付け
         # No1
