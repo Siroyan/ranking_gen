@@ -1,14 +1,7 @@
-import cv2
+from PIL import Image
 
-# 画像読み込み
-img = cv2.imread("./assets/ranking_number.jpg")
+im = Image.open('./assets/ranking_number.png')
 
-# No1
-img1 = img[0 : 227, 0: 227]
-cv2.imwrite("assets/no1.jpg", img1)
-# No2
-img2 = img[0 : 227, 343 : 343 + 227]
-cv2.imwrite("assets/no2.jpg", img2)
-# No3
-img3 = img[0 : 227, 343 + 343 : 343 + 343 + 227]
-cv2.imwrite("assets/no3.jpg", img3)
+im.crop((0, 0, 227, 227)).save('no1.png', quality=95)
+im.crop((343, 0, 343 + 227, 227)).save('no2.png', quality=95)
+im.crop((343 + 343, 0, 343 + 343 + 227, 227)).save('no3.png', quality=95)
